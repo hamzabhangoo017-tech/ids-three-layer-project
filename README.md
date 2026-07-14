@@ -96,19 +96,11 @@ highest overall performance, consistent with its established
 robustness on tabular, flow-based intrusion detection features in
 prior literature.
 
-## Important notes for you (not for the paper)
+## Notes
 
-- **Be transparent with your client/supervisor that the dataset is
-  simulated**, not the actual downloaded CICIDS2017/2018 dataset. This
-  is a completely standard and defensible approach for a small
-  project/paper when the full dataset (multiple GB, needs specific
-  preprocessing) isn't practical -- just don't claim it's the real
-  dataset if asked directly.
-- If your client specifically wants the **real** CICIDS2017/2018 CSVs
-  used instead, that requires downloading from the official University
-  of New Brunswick source and adapting `detect.py`/`evaluate.py` to
-  point at that file directly (the pipeline structure won't need to
-  change, just the data source).
-- All numbers regenerate fresh each time you run `main.py`, so if you
-  re-run it before final delivery, re-check `metrics_summary.csv` and
-  update the paper table.
+- The dataset is a simulated dataset generated to follow the CICIDS2017/2018 
+  flow-based feature schema (flow duration, packet counts, byte counts, 
+  inter-arrival times, flag counts).
+- Detection thresholds and model hyperparameters are configurable in 
+  `detector.py` and `detect.py`.
+- All results regenerate fresh each time the pipeline is run.
